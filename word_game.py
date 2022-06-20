@@ -39,7 +39,6 @@ def main():
                         print(f'Attempts left: {total_attempts - attempts}')
                         continue
                 else:
-                    attempts = total_attempts
                     break
                 if flag:
                     break
@@ -58,15 +57,15 @@ def main():
                     attempts += 1
                     print(f'Attempts left: {total_attempts-attempts}')
                 if attempts == total_attempts:
+                    print(f'Round is over. The word was "{computer_word}"')
                     break
                 if hidden_word == computer_word:
                     print(f'You won! The word was "{computer_word}"')
                     break
-        print(f'Round is over. The word was "{computer_word}"')
-        game = new_game()
+        game = repeat_game()
 
 
-def new_game():
+def repeat_game():
     user_answer = input('Would you like to play once again? Type "Yes" or "No" -> ').lower()
     while True:
         if user_answer == 'no':
